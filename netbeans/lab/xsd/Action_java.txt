@@ -1,0 +1,185 @@
+       if (1 == 1) {
+            return;
+        }
+        // String path = request.getServletPath();
+         /*
+         String folder = "WEB-INF/view/";
+         RequestDispatcher disp = null;
+         WorkOrder workOrder = null;
+         HttpSession session = request.getSession();
+
+         int instrumentId = 0;
+         String instrumentLabel = request.getParameter("instrument");
+
+
+         List<entity.Test> dicTests = null;
+         int NUMBER_LOGS_TO_SHOW = 100;
+         final String listOrderJsp = "/listOrders.jsp";
+         CreateWorkOrder createWo = null;
+         try {
+         this.model = new ModelImpl();
+         if (instrumentLabel != null) {
+         instrumentId = Integer.parseInt(instrumentLabel);
+         this.instr = model.getObject(instrumentId, new Instrument());
+         request.setAttribute("instrument", instr);
+         dicTests = model.getTestsByInstrument(instrumentId, " order by test_order");
+         createWo = FabricaOrder.createWorkOrder(instr.getModel().getName());
+         request.setAttribute("dicTests", dicTests);
+         }
+
+
+         if (path.equals("/index")) {
+                
+         disp = request.getRequestDispatcher(folder + "index.jsp");
+                
+         } else if (path.equals("/addOrder")) {
+                
+         disp = request.getRequestDispatcher(folder + "addOrder.jsp");
+         int postion = 1;
+         workOrder = new WorkOrder();
+         if (request.getParameter("positionLast") != null && !request.getParameter("positionLast").isEmpty()) {
+         postion = Integer.parseInt(request.getParameter("positionLast"));
+         if (postion == 30) {
+         postion = 1;
+         } else {
+         postion++;
+         }
+         }
+         workOrder.setPosition(postion);
+         workOrder.setInstrument(new Instrument(instrumentId, null));
+         workOrder.getAddParams().setProperty("routineSampleOrStatSample", "R");
+         request.setAttribute("order", workOrder);
+         request.setAttribute("formName", createWo.getPageForm());
+         //request.setAttribute("tests", model.codeTests(instrumentId));
+                
+         } else if (path.equals("/saveOrder")) {
+                
+         WorkOrder order = createWo.parseRequestToWorkOrder(request);
+         List<WorkOrder> listWorkOrders = model.getWorkOrdersByInstrument(instrumentId);
+         String message = null;
+         int id = 0;
+         if (order.getId() == 0) {
+         //message = createWo.validate(order, listWorkOrders);
+         if (message == null) {
+         id = model.insertObject(order);
+         order = model.getObject(id, new WorkOrder());
+         request.setAttribute("message", message);
+         }
+         } else {
+         model.updateObject(order);
+         }
+         if (message != null) {
+         disp = request.getRequestDispatcher("addOrder.jsp");
+         } else {
+         request.setAttribute("listWorkOrders", model.getWorkOrdersByInstrument(instrumentId));
+         disp = request.getRequestDispatcher(folder + listOrderJsp);
+         }
+         request.setAttribute("order", order);
+                
+         } else if (path.equals("/editOrder")) {
+                
+         disp = request.getRequestDispatcher(folder + "addOrder.jsp");
+         int id = Integer.parseInt(request.getParameter("id"));
+         request.setAttribute("order", model.getObject(id, new WorkOrder()));
+                
+         } else if (path.equals("/listOrders")) {
+                
+         List<WorkOrder> listWorkOrders = model.getWorkOrdersByInstrument(instrumentId);
+         request.setAttribute("listWorkOrders", listWorkOrders);
+         disp = request.getRequestDispatcher(folder + listOrderJsp);
+                
+         } else if (path.equals("/listLogs")) {
+                
+         List<LogInstrument> listLogs = model.getLogsByInstrument(instr.getId(), "order by id desc", NUMBER_LOGS_TO_SHOW);
+         request.setAttribute("listLogs", listLogs);
+         disp = request.getRequestDispatcher(folder + "listLogs.jsp");
+                
+         } else if (path.equals("/deleteAll")) {
+                
+         int deleted = 0;
+         if (instrumentId != 0) {
+         deleted = model.deleteWorkOrdersByInstruemnt(instrumentId);
+         List<WorkOrder> listWorkOrders = model.getWorkOrdersByInstrument(instrumentId);
+         request.setAttribute("listWorkOrders", listWorkOrders);
+         }
+         request.setAttribute("message", "Удалено " + deleted + " записей");
+         disp = request.getRequestDispatcher(folder + listOrderJsp);
+                
+         } else if (path.equals("/changeStatus")) {
+                
+         int id = Integer.parseInt(request.getParameter("id"));
+         int status = Integer.parseInt(request.getParameter("status"));
+         String label = "";
+         if (status == 1) {
+         model.setWorkOrderAsServed(id);
+         label = "Обработанный";
+         } else {
+         model.setWorkOrderAsFree(id);
+         label = "Свободный";
+         }
+         request.setAttribute("message", String.format("Статус задания с номером %s изменен на '%s'", id, label));
+         request.setAttribute("listWorkOrders", model.getWorkOrdersByInstrument(instrumentId));
+         disp = request.getRequestDispatcher(folder + listOrderJsp);
+         request.setAttribute("order", model.getObject(id, new WorkOrder()));
+                
+         } else if (path.equals("/removeWorkOrder")) {
+                
+         int id = Integer.parseInt(request.getParameter("id"));
+         model.removeObject(id, new WorkOrder());
+         request.setAttribute("message", String.format("Задание с номером %s удалено", id));
+         request.setAttribute("listWorkOrders", model.getWorkOrdersByInstrument(instrumentId));
+         disp = request.getRequestDispatcher(folder + listOrderJsp);
+                
+         } else if (path.equals("/listInstruments")) {
+                
+         List<Instrument> listInstruments = model.getInstruments();
+         request.setAttribute("listInstruments", listInstruments);
+         disp = request.getRequestDispatcher(folder + "listInstruments.jsp");
+
+         //if (request.getParameter("initIstruments") != null) {
+         instrument.InstrumentIndicator instrIndicator = instrument.InstrumentIndicator.getInstance();
+         //}
+         } else if (path.equals("/runApparatus")) {
+                
+         if (instr.getName().equals("cobas411")) {
+         Thread thread = new Thread(new Runnable() {
+         @Override
+         public void run() {
+         instrument.DriverCobas411 driverCobas411 = new DriverCobas411(instr, model);
+         try {
+         InstrumentIndicator.getInstance().startInstrument(instr.getId());
+         driverCobas411.mainRun();
+         } catch (InstrumentException ex) {
+         Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ModelException ex) {
+         Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         }
+         });
+         thread.run();
+         } else {
+         throw new UnsupportedOperationException();
+         }
+         List<Instrument> listInstruments = model.getObjects(new Properties(), new Instrument());
+         request.setAttribute("listInstruments", listInstruments);
+         disp = request.getRequestDispatcher(folder + "listInstruments.jsp");
+                
+         } else if (path.equals("/stopApparatus")) {
+                
+         InstrumentIndicator.getInstance().stopInstrument(instr.getId());
+         List<Instrument> listInstruments = model.getObjects(new Properties(), new Instrument());
+         request.setAttribute("listInstruments", listInstruments);
+         disp = request.getRequestDispatcher(folder + "listInstruments.jsp");
+                
+         }
+
+
+         } catch (Exception ex) {
+         ex.printStackTrace();
+         request.setAttribute("message", ex.getMessage());
+         disp = request.getRequestDispatcher(folder + "index.jsp");
+         }
+         if (disp != null) {
+         disp.forward(request, response);
+         }
+         */

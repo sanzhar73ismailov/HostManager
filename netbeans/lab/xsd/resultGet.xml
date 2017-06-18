@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results messageId="1">
+    <result parameterId="12">
+        <instrument>cobas411</instrument>
+        <testCode>1</testCode>
+        <value>12</value>
+        <units>uM/L</units>
+        <referenseRanges></referenseRanges>
+        <abnormalFlags>L</abnormalFlags>
+        <initialRerun>F</initialRerun>
+        <rawText></rawText>
+        <comment></comment>
+        <status></status>
+        <addParams>dilution=1,predilution=1</addParams>
+    </result>
+    <result parameterId="15">
+        <instrument>cobas411</instrument>
+        <testCode>15</testCode>
+        <value>24</value>
+        <units>mg/L</units>
+        <referenseRanges>12-17</referenseRanges>
+        <abnormalFlags>H</abnormalFlags>
+        <initialRerun>F</initialRerun>
+        <rawText></rawText>
+        <comment></comment>
+        <status></status>
+        <addParams>dilution=2,predilution=2</addParams>
+    </result>
+</results>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message id="123">
+    <parameters></parameters>
+    <instrumentId>cobas411</instrumentId>
+    <sid>100</sid>
+    <rack>0</rack>
+    <position>5</position>
+    <sampleType>SC</sampleType>
+    <patientName>Ivanov Petr</patientName>
+    <patientNumber>45345345345</patientNumber>
+    <dateBirth>19731201</dateBirth>
+    <sex>3</sex>
+    <dateCollection>20150207</dateCollection>
+    <laborantName>Valentina</laborantName>
+    <tests> </tests>
+    <addParams>
+        <param key='dilution' value='1'/>
+        <param key='priority' value='R'/>
+    </addParams>
+</message>
+

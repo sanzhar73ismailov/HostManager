@@ -1,0 +1,21 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Properties"%>
+<%@page import="entity.Analysis"%>
+<%@page import="modelHost.Model"%>
+<%@page import="modelHost.ModelImpl"%>
+<jsp:directive.page pageEncoding="UTF-8"/>
+<td width="20%" valign="top" style="height: 100%;">
+    <a href="index">Main page</a><br>
+    <a href="list?entity=instrument">List of Instruments</a><br>
+    <a href="list?entity=parameter">List of All Parameters</a><br>
+    <%
+        Model model = new ModelImpl();
+        List<Analysis> listAnalysis = model.getObjects(new Properties(), new Analysis());
+        pageContext.setAttribute("listAnalysis", listAnalysis);
+    %>
+    <br/>
+    <c:forEach items="${listAnalysis}" var="analysis">
+        <a href="list?entity=parameter&analysis_id=${analysis.id}">List of Parameters for ${analysis.name}</a><br>
+    </c:forEach>
+</td>

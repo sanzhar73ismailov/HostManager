@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>newtag_library</short-name>
+  <uri>/WEB-INF/tlds/newtag_library</uri>
+  <function>
+      <name>f123</name>
+      <function-class>lab.servlet.Test</function-class>
+      <function-signature>java.lang.String hello(java.lang.String)</function-signature>
+  </function>
+  <function>
+      <name>getWorkOrderProperty</name>
+      <function-class>lab.servlet.FLFunctions</function-class>
+      <function-signature>java.lang.String getWorkOrderProperty(entity.WorkOrder,java.lang.String)</function-signature>
+  </function>
+  <function>
+      <name>getSelected</name>
+      <function-class>lab.servlet.FLFunctions</function-class>
+      <function-signature>java.lang.String getSelected(java.lang.String,java.lang.String)</function-signature>
+  </function>
+  <function>
+      <name>getValueFromDic</name>
+      <function-class>lab.servlet.FLFunctions</function-class>
+      <function-signature>java.lang.String getValueFromDic(java.util.List, java.lang.String)</function-signature>
+  </function>
+  <!-- A validator verifies that the tags are used correctly at JSP
+          translation time. Validator entries look like this: 
+       <validator>
+           <validator-class>com.mycompany.TagLibValidator</validator-class>
+           <init-param>
+              <param-name>parameter</param-name>
+              <param-value>value</param-value>
+           </init-param>
+       </validator>
+    -->
+  <!-- A tag library can register Servlet Context event listeners in
+         case it needs to react to such events. Listener entries look
+         like this: 
+      <listener>
+          <listener-class>com.mycompany.TagLibListener</listener-class> 
+      </listener>
+    -->
+  
+</taglib>

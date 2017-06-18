@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="message">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="parameters" type="xs:string"/> 
+                <xs:element name="instrumentId" type="xs:string"  minOccurs="0" maxOccurs="1"/>
+                <xs:element name="sid" type="xs:string" />
+                <xs:element name="rack" type="xs:string" />
+                <xs:element name="position" type="xs:integer" />
+                <xs:element name="sampleType" type="xs:string" />
+                <xs:element name="patientName" type="xs:string" />
+                <xs:element name="patientNumber" type="xs:string" />
+                <xs:element name="dateBirth" type="xs:string" />
+                <xs:element name="sex">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="dateCollection" type="xs:string" />
+                <xs:element name="laborantName" type="xs:string" />
+                <xs:element name="tests"  type="xs:string"  minOccurs="0" maxOccurs="1"/>
+                <xs:element name="addParams" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="param" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="key" type="xs:string" use="required"/>
+                                    <xs:attribute name="value" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
