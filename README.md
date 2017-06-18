@@ -5,6 +5,7 @@
 ##OS Linux, Windows
 
 ##IDE Netbeans 8.01
+##AS GlassFish 4.1
 
 ##Версия ведется в lab\src\conf\MANIFEST.MF
 Формат: `yy.mm.dd.idx`
