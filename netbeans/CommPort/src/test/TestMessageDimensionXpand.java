@@ -75,8 +75,10 @@ public class TestMessageDimensionXpand {
     }
     private static void testSaveResults() throws InstrumentException, ModelException {
         String str = STX_STRING + "R<FS>*<FS>4<FS>4<FS>1<FS>p<FS>0<FS>222811290415<FS>1"
-                + "<FS>1<FS>3<FS>TP<FS>77<FS>g/L<FS><FS>ALT<FS>57.7<FS>U/L<FS>"
-                + "<FS>AST<FS>24.7<FS>U/L<FS><FS>2C" + ETX_STRING;
+                + "<FS>1<FS>4<FS>TP<FS>77<FS>g/L<FS><FS>ALT<FS>57.7<FS>U/L<FS>"
+                + "<FS>AST<FS>24.7<FS>U/L<FS>"
+                + "<FS>CRE2<FS>76<FS>umol/L<FS>6" //error code 6
+                + "<FS>62C" + ETX_STRING;
         str = str.replaceAll("<FS>", FS_STRING);
         MessageDimensionXpand message = new MessageDimensionXpand(str.getBytes());
         DriverInstrument drv = gerDriver();
