@@ -9,13 +9,13 @@ public class DbConnection {
     //public final static String HOST = "localhost";
     public final static String HOST = "127.0.0.1"; // использовать этот для localhost (в SUSE надежнее)
     public final static String PORT = "3306";
-    public final static String USER = "root";
+    //public final static String USER = "root";
     //public final static String PASSWORD = "elsieltc";
 
-    //public final static String USER = "lisadmin";
-    //public final static String PASSWORD = "1qaz_2wsx";
+    public final static String USER = "lisadmin";
+    public final static String PASSWORD = "1qaz_2wsx";
 
-    public final static String PASSWORD = "";
+    //public final static String PASSWORD = "";
     public final static String DB_NAME = "lis";
 //    public final static String DB_NAME = "lis_assuta_temp";
 //    public final static String DB_NAME = "lis_temp";
