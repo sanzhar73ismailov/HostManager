@@ -48,6 +48,17 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/util/DatabaseConnectionPool.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/instrument/dimensionXpand/DimensionErrorCodes.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/test/TestMessageDimensionXpand.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/instrument/DriverInstrument.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/instrument/dimensionXpand/ResultMessageDimensionXpand.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/modelHost/ModelImpl.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/modelHost/DaoMysqlImpl.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/instrument/DriverDimensionXpand.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/util/DbConnection.java</file>
+            <file>file:/S:/NetBeansProjects/HostManager/netbeans/CommPort/src/instrument/dimensionXpand/DimensionErrorCode.java</file>
+        </group>
     </open-files>
 </project-private>

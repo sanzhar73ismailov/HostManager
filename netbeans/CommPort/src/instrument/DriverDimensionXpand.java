@@ -214,8 +214,8 @@ public class DriverDimensionXpand extends DriverInstrument {
                     DimensionErrorCode errorObj = mapErrors.get(Integer.parseInt(resultDimensionXpand.getErrorCode()));
                     //если код ошибки - 9 или другой, который подавляет результаты, значит реагента нет, пропускаем
                     if (errorObj.isSuppressResult()) {
-                        logTemp("info", "skip saving: " + resultDimensionXpand + ", error is " + errorObj, true);
-                        continue;
+                        logTemp("info", "Saving but there are SuppressResult!!! error for " + resultDimensionXpand + ", error is " + errorObj, true);
+                        //continue;
                     } else {
                         logTemp("info", "Saving but there are error for " + resultDimensionXpand + ", error is" + errorObj, true);
                     }

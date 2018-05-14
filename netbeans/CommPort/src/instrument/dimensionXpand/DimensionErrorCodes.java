@@ -23,7 +23,7 @@ public class DimensionErrorCodes {
                 + "3;NO;Assay Out Of Range;The result for this test was out of assay range defined for the linear method.|"
                 + "4;NO;Absorbance;The photometric reading was out of acceptable range. These errors are also reported out as code.|"
                 + "5;NO;Measurement System (noise, cuvette, etc.);During photometric measurement, the system detected some noise or variances in the absorbance.|"
-                + "6;YES;Reagent QC;Assay is out of the established range for the specified method. See release notes.|"
+                + "6;NO;Reagent QC;Assay is out of the established range for the specified method. See release notes.|"
                 + "7;YES;Arithmetic Error;The result was not able to be calculated using the current coefficients for that method.|"
                 + "8;YES;Never Calibrated;The reagent cartridge lot for this method was never calibrated.|"
                 + "9;YES;No Reagent;The system lacked sufficient reagent for this test or a hydration of a reagent failed.|"
