@@ -38,8 +38,4 @@ public class SqlResult {
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
-    
-    
-    
-
 }

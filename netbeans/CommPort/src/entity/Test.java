@@ -1,11 +1,5 @@
 package entity;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
 public class Test implements Comparable<Test>, HostDictionary {
 
     private int id;

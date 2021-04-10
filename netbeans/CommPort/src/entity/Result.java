@@ -35,6 +35,7 @@ public class Result  implements HostDictionary {
     public Result() {
     }
 
+    @Override
     public int getId() {
         return id;
     }

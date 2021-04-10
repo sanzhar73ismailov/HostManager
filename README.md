@@ -21,14 +21,17 @@
    DOC - документация
 
 ##История изменений (расти вверх)
+v. 21.04.10.1
+   ~ в проекте lab - рефакторинг
+   ~ в проект CommPort - рефакторинг
 v. 18.05.14.1
-~  DriverDimensionXpand.getResultsFromMessage
-   теперь в результаты в базу попадают все результаты, не только с простыми ошибками, но и с SuppressResult ошибками.
+   ~ DriverDimensionXpand.getResultsFromMessage
+     теперь в результаты в базу попадают все результаты, не только с простыми ошибками, но и с SuppressResult ошибками.
 v. 16.06.27.1 
-~ DoReport поменял, чтобы в отчет попадали результаты прибора не только последние, но и по версиям
+   ~ DoReport поменял, чтобы в отчет попадали результаты прибора не только последние, но и по версиям
 v. 16.06.05.1 
-+  в проект lab добавил новый веб-сервисный метод getResultsByInstrumentAndDate для получения результатов по прибору
-~ в проект CommPort - в классе instrument.DriverAdvia2120 в методе getResultsFromMessage добавил строки по нарщиванию версии результата
+   + в проект lab добавил новый веб-сервисный метод getResultsByInstrumentAndDate для получения результатов по прибору
+   ~ в проект CommPort - в классе instrument.DriverAdvia2120 в методе getResultsFromMessage добавил строки по нарщиванию версии результата
                 int lastVersion = model.getVersionOfLastResultByInstrumentAndSid(instrument.getName(), message.getSid(), testCode);
                 resEntity.setVersion(lastVersion + 1);
 

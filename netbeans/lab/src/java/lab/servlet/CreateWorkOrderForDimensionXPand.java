@@ -7,11 +7,7 @@ package lab.servlet;
 
 import entity.Instrument;
 import entity.WorkOrder;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletRequest;
 
 /**
@@ -57,7 +53,6 @@ class CreateWorkOrderForDimensionXPand implements CreateWorkOrder {
     @Override
     public String validate(WorkOrder order, List<WorkOrder> listWorkOrders) {
         StringBuilder sb = new StringBuilder();
-        boolean validate = true;
         // на будущее делать проверку, нет ли в базе заказа за этот день с таким же SID
         for (WorkOrder workOrder : listWorkOrders) {
             if (order.getSid().equals(workOrder.getSid())) {
@@ -66,7 +61,6 @@ class CreateWorkOrderForDimensionXPand implements CreateWorkOrder {
                         append(" уже существует во временном списке").
                         append("<br>");
             }
-
         }
         if (sb.length() > 0) {
             return sb.toString();

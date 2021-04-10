@@ -23,6 +23,7 @@ public class Sender  implements HostDictionary {
         this.description = description;
     }
 
+    @Override
     public int getId() {
         return id;
     }
@@ -31,6 +32,7 @@ public class Sender  implements HostDictionary {
         this.id = id;
     }
 
+    @Override
     public String getName() {
         return name;
     }

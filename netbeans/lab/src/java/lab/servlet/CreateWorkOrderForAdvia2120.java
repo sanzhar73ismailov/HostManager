@@ -14,13 +14,13 @@ public class CreateWorkOrderForAdvia2120 implements CreateWorkOrder {
 
     @Override
     public WorkOrder parseRequestToWorkOrder(ServletRequest request) {
-         WorkOrder order = new WorkOrder();
+        WorkOrder order = new WorkOrder();
         order.setId(Integer.parseInt(request.getParameter("id")));
         Instrument instr = new Instrument(Integer.parseInt(request.getParameter("instrument")), null);
         order.setInstrument(instr);
         if (request.getParameter("mid") != null && !request.getParameter("mid").trim().isEmpty()) {
             order.setMid(Integer.parseInt(request.getParameter("mid")));
-        }else{
+        } else {
             order.setMid(1);
         }
         order.setSid(request.getParameter("sid"));
@@ -48,7 +48,6 @@ public class CreateWorkOrderForAdvia2120 implements CreateWorkOrder {
             order.setSex(Integer.parseInt(request.getParameter("status")));
         }
 
-
         String[] testVals = request.getParameterValues("tests");
         if (testVals != null) {
             StringBuilder sb = new StringBuilder();
@@ -59,8 +58,8 @@ public class CreateWorkOrderForAdvia2120 implements CreateWorkOrder {
         }
         Properties addParamProperties = new Properties();
 //        addParamProperties.setProperty("containerType", request.getParameter("containerType"));
-         addParamProperties.setProperty("routineSampleOrStatSample", request.getParameter("routineSampleOrStatSample"));
-         addParamProperties.setProperty("updateIndicator", request.getParameter("updateIndicator"));
+        addParamProperties.setProperty("routineSampleOrStatSample", request.getParameter("routineSampleOrStatSample"));
+        addParamProperties.setProperty("updateIndicator", request.getParameter("updateIndicator"));
 //        addParamProperties.setProperty("dilution", request.getParameter("dilution"));
 //        order.setAddParams(addParamProperties);
         return order;
@@ -75,6 +74,5 @@ public class CreateWorkOrderForAdvia2120 implements CreateWorkOrder {
     public String getPageForm() {
         return "advia2120";
     }
-
 
 }

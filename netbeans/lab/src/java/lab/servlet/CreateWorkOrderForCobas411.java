@@ -67,7 +67,6 @@ public class CreateWorkOrderForCobas411 implements CreateWorkOrder {
     @Override
     public String validate(WorkOrder order, List<WorkOrder> listWorkOrders) {
         StringBuilder sb = new StringBuilder();
-        boolean validate = true;
         // на будущее делать проверку, нет ли в базе заказа за этот день с таким же SID
         for (WorkOrder workOrder : listWorkOrders) {
             if (order.getSid().equals(workOrder.getSid())) {

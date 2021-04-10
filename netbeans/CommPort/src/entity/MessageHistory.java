@@ -19,6 +19,7 @@ public class MessageHistory implements HostDictionary {
         this.insertDatetime = insertDatetime;
     }
 
+    @Override
     public int getId() {
         return id;
     }

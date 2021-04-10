@@ -29,6 +29,7 @@ public class Message  implements HostDictionary {
         this.insertDatetime = insertDatetime;
     }
 
+    @Override
     public int getId() {
         return id;
     }

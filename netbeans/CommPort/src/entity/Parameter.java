@@ -24,6 +24,7 @@ public class Parameter implements HostDictionary {
         this.tests = tests;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -32,6 +33,7 @@ public class Parameter implements HostDictionary {
         this.name = name;
     }
 
+    @Override
     public int getId() {
         return id;
     }

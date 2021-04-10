@@ -18,6 +18,7 @@ public class InstrumentModel  implements HostDictionary {
         this.name = name;
     }
 
+    @Override
     public int getId() {
         return id;
     }
@@ -26,6 +27,7 @@ public class InstrumentModel  implements HostDictionary {
         this.id = id;
     }
 
+    @Override
     public String getName() {
         return name;
     }

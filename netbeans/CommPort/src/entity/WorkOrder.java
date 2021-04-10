@@ -1,10 +1,5 @@
 package entity;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Set;

@@ -36,8 +36,8 @@ public class DaoMysqlImpl implements Dao {
         String query = queryObj.getQueryById();
         Connection con = conPool.getConnection();
         try (
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query)) {
+                 Statement st = con.createStatement();  
+                 ResultSet rs = st.executeQuery(query)) {
             if (rs.next()) {
                 objectToReturn = queryObj.getObjectFromResultSet(rs);
             }
@@ -45,7 +45,6 @@ public class DaoMysqlImpl implements Dao {
             throw new DaoException(ex.getMessage(), ex);
         } finally {
             conPool.freeConnection(con);
-
         }
         return objectToReturn;
     }
@@ -57,8 +56,8 @@ public class DaoMysqlImpl implements Dao {
         String insertTableSQL = queryObj.getInsertQuery();
         Connection con = conPool.getConnection();
         try (
-                PreparedStatement preparedStatement
-                = con.prepareStatement(insertTableSQL, Statement.RETURN_GENERATED_KEYS);) {
+                 PreparedStatement preparedStatement = con.prepareStatement(insertTableSQL, Statement.RETURN_GENERATED_KEYS);
+            ) {
             queryObj.setParamsToPreparedStatement(preparedStatement, obj, QueryOperation.INSERT);
             preparedStatement.executeUpdate();
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
@@ -80,7 +79,7 @@ public class DaoMysqlImpl implements Dao {
         Connection con = conPool.getConnection();
         Query<T> queryObj = QueryCreator.createQueryToGetOneInstance(obj, id);
         int rows = 0;
-        try (Statement st = con.createStatement()) {
+        try ( Statement st = con.createStatement()) {
             rows = st.executeUpdate(queryObj.getDeleteQuery());
         } catch (SQLException ex) {
             throw new DaoException(ex.getMessage(), ex);
@@ -95,7 +94,7 @@ public class DaoMysqlImpl implements Dao {
         Connection con = conPool.getConnection();
         int rowCount = 0;
         Query<T> queryObj = QueryCreator.createQueryToGetOneInstance(object, 0);
-        try (PreparedStatement preparedStatement = con.prepareStatement(queryObj.getUpdateQuery())) {
+        try ( PreparedStatement preparedStatement = con.prepareStatement(queryObj.getUpdateQuery())) {
             queryObj.setParamsToPreparedStatement(preparedStatement, object, QueryOperation.UPDATE);
             System.out.println("getUpdateQuery = " + queryObj.getUpdateQuery());
             rowCount = preparedStatement.executeUpdate();
@@ -147,8 +146,8 @@ public class DaoMysqlImpl implements Dao {
         System.out.println("          >>>>>>>>>");
         Connection con = conPool.getConnection();
         try (
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query)) {
+                 Statement st = con.createStatement();  
+                 ResultSet rs = st.executeQuery(query)) {
             while (rs.next()) {
                 T objElement = queryObj.getObjectFromResultSet(rs);
                 list.add(objElement);
@@ -176,9 +175,8 @@ public class DaoMysqlImpl implements Dao {
         }
         String query = "DELETE FROM " + queryObj.getTableName() + " WHERE 1=1 " + where.toString();
         Connection con = conPool.getConnection();
-        try (Statement st = con.createStatement()) {
+        try ( Statement st = con.createStatement()) {
             rows = st.executeUpdate(query);
-
         } catch (SQLException ex) {
             throw new DaoException(ex.getMessage(), ex);
         } finally {
@@ -193,7 +191,7 @@ public class DaoMysqlImpl implements Dao {
         int rowCount = 0;
         Query<T> queryObj = QueryCreator.createQueryToGetOneInstance(object, id);
         String query = "UPDATE " + queryObj.getTableName() + " " + setString + " WHERE id=" + id;
-        try (Statement st = con.createStatement()) {
+        try ( Statement st = con.createStatement()) {
             rowCount = st.executeUpdate(query);
             if (rowCount < 1) {
                 throw new DaoException("not updated object with id " + object.getId());
@@ -212,8 +210,7 @@ public class DaoMysqlImpl implements Dao {
         int value = 0;
         String query = String.format("SELECT max(version) FROM result WHERE instrument='%s' AND sid='%s' AND test_code='%s'",
                 instrument, sid, testCode);
-        try (Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query)) {
+        try ( Statement st = con.createStatement();  ResultSet rs = st.executeQuery(query)) {
             if (rs.next()) {
                 value = rs.getInt(1);
             }
@@ -231,8 +228,8 @@ public class DaoMysqlImpl implements Dao {
         int value = 0;
         String query = String.format("SELECT max(version) FROM result WHERE instrument='%s' AND sid='%s'",
                 instrument, sid);
-        try (Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query)) {
+        try ( Statement st = con.createStatement();  
+              ResultSet rs = st.executeQuery(query)) {
             if (rs.next()) {
                 value = rs.getInt(1);
             }
@@ -260,7 +257,7 @@ public class DaoMysqlImpl implements Dao {
         }
         String query = String.format("DELETE FROM %s WHERE 1=1 %s", tableName, where.toString());
         System.out.println("query = " + query);
-        try (Statement st = con.createStatement()) {
+        try ( Statement st = con.createStatement()) {
             rows = st.executeUpdate(query);
         } catch (SQLException e) {
             throw new DaoException(e);

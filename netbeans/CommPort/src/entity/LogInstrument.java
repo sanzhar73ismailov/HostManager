@@ -23,6 +23,7 @@ public class LogInstrument implements HostDictionary {
         this.temp = temp;
     }
 
+    @Override
     public int getId() {
         return id;
     }
