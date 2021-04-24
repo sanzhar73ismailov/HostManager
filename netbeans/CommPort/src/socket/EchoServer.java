@@ -1,5 +1,7 @@
 package socket;
 
+import instrument.ASCII;
+
 import java.net.*;
 import java.io.*;
 import java.util.Date;
@@ -17,15 +19,15 @@ public class EchoServer {
         //int portNumber = Integer.parseInt(args[0]);
         //int portNumber = 64001;
         int portNumber = 950;
-
+        System.out.println("before accept");
         try (
-                ServerSocket serverSocket =
-                new ServerSocket(portNumber);
+                ServerSocket serverSocket = new ServerSocket(portNumber);
+
                 Socket clientSocket = serverSocket.accept();
-                PrintWriter out =
-                new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(
-                new InputStreamReader(clientSocket.getInputStream()));) {
+                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        ) {
+
             String inputLine;
             System.out.println("after accept");
 //            while ((inputLine = in.readLine()) != null) {
@@ -33,10 +35,17 @@ public class EchoServer {
 //            }
             String message;
             while (true) {
-                message = "from server: " + new Date();
-                out.println(message);
-                System.out.println("message = " + message);
-                Thread.sleep(2000);
+                inputLine = in.readLine();
+                if(inputLine.startsWith("hi")) {
+                    String strStart = new String(new byte[]{ASCII.STX, 1});
+                    String strEnd = new String(new byte[]{ASCII.CR, ASCII.LF});
+                    message = strStart + "from server: " + new Date();
+                    out.println(message);
+                    System.out.println("message = " + message);
+                    Thread.sleep(2000);
+                }
+                System.out.println("true ");
+
             }
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "

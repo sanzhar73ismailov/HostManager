@@ -11,4 +11,5 @@ public interface Configurator {
     String SYSMEX_CA_1500 = "SYSMEX_CA_1500";
     String VIVA_E = "VIVA_E";
     String MINDRAY_BC_3000 = "MINDRAY_BC_3000";
+    String SYSMEX_XS_500_i = "SYSMEX_XS_500_i";
 }

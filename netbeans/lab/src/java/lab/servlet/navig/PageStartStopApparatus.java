@@ -9,6 +9,7 @@ import instrument.DriverImmulite2000;
 import instrument.DriverMindrayBC3000;
 import instrument.DriverSysmexCa1500;
 import instrument.DriverSysmexCa660;
+import instrument.DriverSysmexXS500i;
 import instrument.DriverVivaE;
 import instrument.InstrumentIndicator;
 import java.util.List;
@@ -44,27 +45,40 @@ public class PageStartStopApparatus extends AbstractPageNavigator {
                     } else {
                         switch (action) {
                             case "start":
-                                if (instrObj.getModel().getName().equals(instrument.Configurator.COBASE411)) {
+                            switch (instrObj.getModel().getName()) {
+                                case instrument.Configurator.COBASE411:
                                     driver = new DriverCobas411(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.ADVIA2120)) {
+                                    break;
+                                case instrument.Configurator.ADVIA2120:
                                     driver = new DriverAdvia2120(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.DIMENSION_XPAND)) {
+                                    break;
+                                case instrument.Configurator.DIMENSION_XPAND:
                                     driver = new DriverDimensionXpand(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.IMMULITE2000)) {
+                                    break;
+                                case instrument.Configurator.IMMULITE2000:
                                     driver = new DriverImmulite2000(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.SYSMEX_CA_660)) {
+                                    break;
+                                case instrument.Configurator.SYSMEX_CA_660:
                                     driver = new DriverSysmexCa660(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.ADVIA_CENTAUR_CP)) {
+                                    break;
+                                case instrument.Configurator.ADVIA_CENTAUR_CP:
                                     driver = new DriverAdviaCentaurCP(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.VIVA_E)) {
+                                    break;
+                                case instrument.Configurator.VIVA_E:
                                     driver = new DriverVivaE(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.SYSMEX_CA_1500)) {
+                                    break;
+                                case instrument.Configurator.SYSMEX_CA_1500:
                                     driver = new DriverSysmexCa1500(instrObj, model);
-                                } else if (instrObj.getModel().getName().equals(instrument.Configurator.MINDRAY_BC_3000)) {
+                                    break;
+                                case instrument.Configurator.MINDRAY_BC_3000:
                                     driver = new DriverMindrayBC3000(instrObj, model);
-                                } else {
+                                    break;
+                                case instrument.Configurator.SYSMEX_XS_500_i:
+                                    driver = new DriverSysmexXS500i(instrObj, model);
+                                    break;
+                                default:
                                     throw new UnsupportedOperationException("see " + this.getClass().getName());
-                                }
+                            }
 
                                 if (instrIndicator.isStopped(instrObj.getId())) {
                                     InstrumentIndicator.getInstance().startInstrument(instrObj.getId());
@@ -73,6 +87,7 @@ public class PageStartStopApparatus extends AbstractPageNavigator {
                                     driver.logIsAlredyRun();
                                 }
                                 break;
+
 
                             case "stop":
                                 instrIndicator.stopInstrument(instrObj.getId());

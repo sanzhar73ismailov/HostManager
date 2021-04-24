@@ -3,23 +3,15 @@ package instrument;
 import entity.Instrument;
 import entity.Result;
 import entity.WorkOrder;
-import static instrument.ASCII.*;
-import static instrument.DriverInstrument.TO_HOST;
-import instrument.astm.Frame;
-import instrument.astm.MessageAstm;
-import instrument.astm.TypeMessage;
-import instrument.astm.TypeRecord;
-import instrument.immulite2000.FrameImmulite2000;
-import instrument.immulite2000.Immulite2000Exception;
-import instrument.immulite2000.MessageImmulite2000;
-import instrument.astm.Record;
-import instrument.astm.RecordProducer;
-import instrument.immulite2000.RecordProducerImmulite2000;
-import instrument.immulite2000.RecordResultImmulite2000;
+import instrument.astm.*;
+import instrument.immulite2000.*;
+import modelHost.Model;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import modelHost.Model;
+
+import static instrument.ASCII.*;
 
 public class DriverImmulite2000 extends DriverInstrument {
 
@@ -85,7 +77,7 @@ public class DriverImmulite2000 extends DriverInstrument {
             } else {
                 logTemp("info", "Other than ENQ: " + getASCIICodeAsString(inputValueMainRun), true);
             }
-                  
+
         } catch (Exception ex) {
             throw new InstrumentException(ex);
         }
@@ -168,12 +160,14 @@ public class DriverImmulite2000 extends DriverInstrument {
                     addParams += ",resultStatus" + "=" + recordResult.getResultStatus();
                     result.setAddParams(addParams);
 
+                    int parameterId = 0;
                     entity.Test test = model.getTestByTestCode(testCode, this.instrument.getId());
-                    if(test == null){
+                    if (test != null) {
+                        parameterId = test.getParameter().getId();
+                    } else {
                         log("info", "unknown test code: " + testCode, true);
-                        continue;
                     }
-                    result.setParameterId(test.getParameter().getId());
+                    result.setParameterId(parameterId);
                     WorkOrder wo = model.getWorkOrderBySidAndInstrument(result.getSid(), this.instrument.getId());
                     if (wo != null) {
                         result.setWorkOrderId(wo.getId());
@@ -228,7 +222,7 @@ public class DriverImmulite2000 extends DriverInstrument {
         int sizeArray = 10000;
         byte[] byteArray = new byte[sizeArray];
         byteArray[indexOfByteArray++] = ASCII.STX;
-        byte[] neewByteArray;
+        byte[] newByteArray;
         FrameImmulite2000 frame;
         while (true) {
             try {
@@ -247,8 +241,8 @@ public class DriverImmulite2000 extends DriverInstrument {
                     byteArray[indexOfByteArray++] = (byte) inputStream.read(); // chk 2 read
                     byteArray[indexOfByteArray++] = (byte) inputStream.read(); // CR read
                     byteArray[indexOfByteArray++] = (byte) inputStream.read(); // LF read
-                    neewByteArray = java.util.Arrays.copyOf(byteArray, indexOfByteArray);
-                    frame = new FrameImmulite2000(new String(neewByteArray));
+                    newByteArray = java.util.Arrays.copyOf(byteArray, indexOfByteArray);
+                    frame = new FrameImmulite2000(new String(newByteArray));
                     break;
                 }
             } catch (IOException ex) {
