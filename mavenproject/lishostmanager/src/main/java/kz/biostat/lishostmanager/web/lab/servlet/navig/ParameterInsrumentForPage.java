@@ -81,6 +81,9 @@ public class ParameterInsrumentForPage {
                 //this.listParameters = allParameters;
                 for (Parameter param : allParameters) {
                     Test testDefault = param.getTestDefault();
+                    if(param.getAnalysis() == null && param.getId() != 0) {
+                        throw new RuntimeException("The parameter with id " + param.getId() + "has null in analysis_id column. Please check DB");
+                    }
                     if (testDefault != null
                             && param.getAnalysis().getId() == analysis.getId()) {
 

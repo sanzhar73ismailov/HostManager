@@ -23,12 +23,12 @@ public class PageIndex extends AbstractPageNavigator {
         pageTo = "index.jsp";
         String manifestVersion = "unknown version";
         Properties prop = new Properties();
-        try {
-            prop.load(request.getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
-        } catch (IOException ex) {
-            Logger.getLogger(PageIndex.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        manifestVersion = prop.getProperty("Manifest-Version");
+//        try {
+//            prop.load(request.getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
+//        } catch (IOException ex) {
+//            Logger.getLogger(PageIndex.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        manifestVersion = prop.getProperty("Manifest-Version");
         request.setAttribute("manifestVersion", manifestVersion);
     }
 

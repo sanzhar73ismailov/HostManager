@@ -66,6 +66,7 @@ ALTER TABLE `result` MODIFY COLUMN value VARCHAR(250); -- old size=30
 update test set parameter_id=1028, units="%" where instrument_id=8 and code='NRBC';
 update parameter set test_id=(select t.id from test t where t.instrument_id=8 and t.code='NRBC') where id=1028;
 update parameter set test_id=(select t.id from test t where t.instrument_id=1 and t.code='29') where id=1029;
+update parameter set analysis_id=3 where id=5011;
 
 
 

@@ -10,3 +10,4 @@ dist
 /mavenproject/lishostmanager/target/
 /mavenproject/lishostmanager/*.iml
 /mavenproject/lishostmanager/.idea/
+/mavenproject/lishostmanager/nb-configuration.xml
