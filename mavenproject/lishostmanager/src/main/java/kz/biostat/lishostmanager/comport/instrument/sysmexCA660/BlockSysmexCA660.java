@@ -1,0 +1,60 @@
+package kz.biostat.lishostmanager.comport.instrument.sysmexCA660;
+
+import kz.biostat.lishostmanager.comport.instrument.ASCII;
+
+public class BlockSysmexCA660 {
+
+    int number;
+    int totalNumbers;
+    String text;
+    private Parameters parameters;
+
+    public BlockSysmexCA660(String text) {
+        this.text = text;
+        parameters = new Parameters(text);
+        number = Integer.parseInt(parameters.blockNumber);
+        totalNumbers = Integer.parseInt(parameters.totalNumberBlocks);
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getTotalNumbers() {
+        return totalNumbers;
+    }
+
+    public void setTotalNumbers(int totalNumbers) {
+        this.totalNumbers = totalNumbers;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public boolean isFinalBlock() {
+        return  (totalNumbers != 0) && (number == totalNumbers);
+    }
+
+    public Parameters getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Parameters parameters) {
+        this.parameters = parameters;
+    }
+    
+    public String getBlockAsString(){
+        String str = ASCII.getStringWithAsciiCodes(text);
+        return str;
+    }
+
+}

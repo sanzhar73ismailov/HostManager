@@ -1,0 +1,116 @@
+2021-04-14 10:57:36 DEBUG EchoClient:96 - H<-M: <STX>7R|1|^^^^WBC^1|8.98|10*3/uL||N||||||20210414145654<CR><ETX>17<CR><LF>
+2021-04-14 10:57:36 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:57:41 DEBUG EchoClient:41 - inputStream.available()=57
+2021-04-14 10:57:41 DEBUG EchoClient:96 - H<-M: <STX>0R|2|^^^^RBC^1|4.03|10*6/uL||N||||||20210414145654<CR><ETX>FD<CR><LF>
+2021-04-14 10:57:41 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:57:46 DEBUG EchoClient:41 - inputStream.available()=54
+2021-04-14 10:57:46 DEBUG EchoClient:96 - H<-M: <STX>1R|3|^^^^HGB^1|12.4|g/dL||N||||||20210414145654<CR><ETX>8E<CR><LF>
+2021-04-14 10:57:46 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:57:51 DEBUG EchoClient:41 - inputStream.available()=51
+2021-04-14 10:57:51 DEBUG EchoClient:96 - H<-M: <STX>2R|4|^^^^HCT^1|37.9|%||N||||||20210414145654<CR><ETX>89<CR><LF>
+2021-04-14 10:57:51 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:57:56 DEBUG EchoClient:41 - inputStream.available()=52
+2021-04-14 10:57:56 DEBUG EchoClient:96 - H<-M: <STX>3R|5|^^^^MCV^1|94.0|fL||N||||||20210414145654<CR><ETX>19<CR><LF>
+2021-04-14 10:57:56 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:01 DEBUG EchoClient:41 - inputStream.available()=52
+2021-04-14 10:58:01 DEBUG EchoClient:96 - H<-M: <STX>4R|6|^^^^MCH^1|30.8|pg||N||||||20210414145654<CR><ETX>30<CR><LF>
+2021-04-14 10:58:01 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:06 DEBUG EchoClient:41 - inputStream.available()=55
+2021-04-14 10:58:06 DEBUG EchoClient:96 - H<-M: <STX>5R|7|^^^^MCHC^1|32.7|g/dL||N||||||20210414145654<CR><ETX>E5<CR><LF>
+2021-04-14 10:58:06 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:11 DEBUG EchoClient:41 - inputStream.available()=56
+2021-04-14 10:58:11 DEBUG EchoClient:96 - H<-M: <STX>6R|8|^^^^PLT^1|302|10*3/uL||N||||||20210414145654<CR><ETX>EF<CR><LF>
+2021-04-14 10:58:11 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:16 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 10:58:16 DEBUG EchoClient:96 - H<-M: <STX>7R|9|^^^^NEUT%^1|57.7|%||N||||||20210414145654<CR><ETX>15<CR><LF>
+2021-04-14 10:58:16 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:21 DEBUG EchoClient:41 - inputStream.available()=55
+2021-04-14 10:58:21 DEBUG EchoClient:96 - H<-M: <STX>0R|10|^^^^LYMPH%^1|29.8|%||N||||||20210414145654<CR><ETX>84<CR><LF>
+2021-04-14 10:58:21 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:26 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 10:58:26 DEBUG EchoClient:96 - H<-M: <STX>1R|11|^^^^MONO%^1|8.6|%||N||||||20210414145654<CR><ETX>00<CR><LF>
+2021-04-14 10:58:26 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:31 DEBUG EchoClient:41 - inputStream.available()=51
+2021-04-14 10:58:31 DEBUG EchoClient:96 - H<-M: <STX>2R|12|^^^^EO%^1|3.7|%||N||||||20210414145654<CR><ETX>59<CR><LF>
+2021-04-14 10:58:31 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:36 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 10:58:36 DEBUG EchoClient:96 - H<-M: <STX>3R|13|^^^^BASO%^1|0.2|%||N||||||20210414145654<CR><ETX>E4<CR><LF>
+2021-04-14 10:58:36 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:41 DEBUG EchoClient:41 - inputStream.available()=60
+2021-04-14 10:58:41 DEBUG EchoClient:96 - H<-M: <STX>4R|14|^^^^NEUT#^1|5.18|10*3/uL||N||||||20210414145654<CR><ETX>C0<CR><LF>
+2021-04-14 10:58:41 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:46 DEBUG EchoClient:41 - inputStream.available()=61
+2021-04-14 10:58:46 DEBUG EchoClient:96 - H<-M: <STX>5R|15|^^^^LYMPH#^1|2.68|10*3/uL||N||||||20210414145654<CR><ETX>12<CR><LF>
+2021-04-14 10:58:46 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:51 DEBUG EchoClient:41 - inputStream.available()=60
+2021-04-14 10:58:51 DEBUG EchoClient:96 - H<-M: <STX>6R|16|^^^^MONO#^1|0.77|10*3/uL||H||||||20210414145654<CR><ETX>BB<CR><LF>
+2021-04-14 10:58:51 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:58:56 DEBUG EchoClient:41 - inputStream.available()=58
+2021-04-14 10:58:56 DEBUG EchoClient:96 - H<-M: <STX>7R|17|^^^^EO#^1|0.33|10*3/uL||N||||||20210414145654<CR><ETX>16<CR><LF>
+2021-04-14 10:58:56 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:01 DEBUG EchoClient:41 - inputStream.available()=60
+2021-04-14 10:59:01 DEBUG EchoClient:96 - H<-M: <STX>0R|18|^^^^BASO#^1|0.02|10*3/uL||N||||||20210414145654<CR><ETX>9D<CR><LF>
+2021-04-14 10:59:01 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:06 DEBUG EchoClient:41 - inputStream.available()=56
+2021-04-14 10:59:06 DEBUG EchoClient:96 - H<-M: <STX>1R|19|^^^^RDW-SD^1|45.9|fL||N||||||20210414145654<CR><ETX>1C<CR><LF>
+2021-04-14 10:59:06 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:11 DEBUG EchoClient:41 - inputStream.available()=55
+2021-04-14 10:59:11 DEBUG EchoClient:96 - H<-M: <STX>2R|20|^^^^RDW-CV^1|13.8|%||N||||||20210414145654<CR><ETX>84<CR><LF>
+2021-04-14 10:59:11 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:16 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 10:59:16 DEBUG EchoClient:96 - H<-M: <STX>3R|21|^^^^PDW^1|11.9|fL||N||||||20210414145654<CR><ETX>4A<CR><LF>
+2021-04-14 10:59:16 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:21 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 10:59:21 DEBUG EchoClient:96 - H<-M: <STX>4R|22|^^^^MPV^1|10.7|fL||N||||||20210414145654<CR><ETX>51<CR><LF>
+2021-04-14 10:59:21 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:26 DEBUG EchoClient:41 - inputStream.available()=54
+2021-04-14 10:59:26 DEBUG EchoClient:96 - H<-M: <STX>5R|23|^^^^P-LCR^1|30.0|%||N||||||20210414145654<CR><ETX>2C<CR><LF>
+2021-04-14 10:59:26 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:31 DEBUG EchoClient:41 - inputStream.available()=52
+2021-04-14 10:59:31 DEBUG EchoClient:96 - H<-M: <STX>6R|24|^^^^PCT^1|0.32|%||N||||||20210414145654<CR><ETX>B9<CR><LF>
+2021-04-14 10:59:31 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:36 DEBUG EchoClient:41 - inputStream.available()=49
+2021-04-14 10:59:36 DEBUG EchoClient:96 - H<-M: <STX>7R|25|^^^^Blasts?|0|||||||||20210414145654<CR><ETX>E7<CR><LF>
+2021-04-14 10:59:36 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:41 DEBUG EchoClient:41 - inputStream.available()=57
+2021-04-14 10:59:41 DEBUG EchoClient:96 - H<-M: <STX>0R|26|^^^^Immature_Gran?|20|||||||||20210414145654<CR><ETX>D5<CR><LF>
+2021-04-14 10:59:41 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:46 DEBUG EchoClient:41 - inputStream.available()=54
+2021-04-14 10:59:46 DEBUG EchoClient:96 - H<-M: <STX>1R|27|^^^^Left_Shift?|10|||||||||20210414145654<CR><ETX>93<CR><LF>
+2021-04-14 10:59:46 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:51 DEBUG EchoClient:41 - inputStream.available()=48
+2021-04-14 10:59:51 DEBUG EchoClient:96 - H<-M: <STX>2R|28|^^^^NRBC?|80|||||||||20210414145654<CR><ETX>D9<CR><LF>
+2021-04-14 10:59:51 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 10:59:56 DEBUG EchoClient:41 - inputStream.available()=59
+2021-04-14 10:59:56 DEBUG EchoClient:96 - H<-M: <STX>3R|29|^^^^Atypical_Lympho?|20|||||||||20210414145654<CR><ETX>BF<CR><LF>
+2021-04-14 10:59:56 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:01 DEBUG EchoClient:41 - inputStream.available()=53
+2021-04-14 11:00:01 DEBUG EchoClient:96 - H<-M: <STX>4R|30|^^^^Abn_Lympho?|0|||||||||20210414145654<CR><ETX>60<CR><LF>
+2021-04-14 11:00:01 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:06 DEBUG EchoClient:41 - inputStream.available()=61
+2021-04-14 11:00:06 DEBUG EchoClient:96 - H<-M: <STX>5R|31|^^^^RBC_Agglutination?|70|||||||||20210414145654<CR><ETX>3C<CR><LF>
+2021-04-14 11:00:06 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:11 DEBUG EchoClient:41 - inputStream.available()=70
+2021-04-14 11:00:11 DEBUG EchoClient:96 - H<-M: <STX>6R|32|^^^^Turbidity/HGB_Interference?|80|||||||||20210414145654<CR><ETX>AC<CR><LF>
+2021-04-14 11:00:11 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:16 DEBUG EchoClient:41 - inputStream.available()=59
+2021-04-14 11:00:16 DEBUG EchoClient:96 - H<-M: <STX>7R|33|^^^^Iron_Deficiency?|70|||||||||20210414145654<CR><ETX>9E<CR><LF>
+2021-04-14 11:00:16 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:21 DEBUG EchoClient:41 - inputStream.available()=54
+2021-04-14 11:00:21 DEBUG EchoClient:96 - H<-M: <STX>0R|34|^^^^HGB_Defect?|70|||||||||20210414145654<CR><ETX>29<CR><LF>
+2021-04-14 11:00:21 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:26 DEBUG EchoClient:41 - inputStream.available()=52
+2021-04-14 11:00:26 DEBUG EchoClient:96 - H<-M: <STX>1R|35|^^^^Fragments?|0|||||||||20210414145654<CR><ETX>20<CR><LF>
+2021-04-14 11:00:26 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:31 DEBUG EchoClient:41 - inputStream.available()=54
+2021-04-14 11:00:31 DEBUG EchoClient:96 - H<-M: <STX>2R|36|^^^^PLT_Clumps?|30|||||||||20210414145654<CR><ETX>71<CR><LF>
+2021-04-14 11:00:31 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:36 DEBUG EchoClient:41 - inputStream.available()=99
+2021-04-14 11:00:36 DEBUG EchoClient:96 - H<-M: <STX>3R|37|^^^^SCAT_DIFF|PNG&R&20210414&R&2021_04_14_14_56_85098_DIFF.PNG|||N||||||20210414145654<CR><ETX>80<CR><LF>
+2021-04-14 11:00:36 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:41 DEBUG EchoClient:41 - inputStream.available()=97
+2021-04-14 11:00:41 DEBUG EchoClient:96 - H<-M: <STX>4R|38|^^^^DIST_RBC|PNG&R&20210414&R&2021_04_14_14_56_85098_RBC.PNG|||N||||||20210414145654<CR><ETX>07<CR><LF>
+2021-04-14 11:00:41 DEBUG EchoClient:82 - H->M: <ACK>
+2021-04-14 11:00:46 DEBUG EchoClient:41 - inputStream.available()=97
+2021-04-14 11:00:46 DEBUG EchoClient:96 - H<-M: <STX>5R|39|^^^^DIST_PLT|PNG&R&20210414&R&2021_04_14_14_56_85098_PLT.PNG|||N||||||20210414145654<CR><ETX>3B<CR><LF>
+2021-04-14 11:00:46 DEBUG EchoClient:82 - H->M: <ACK>

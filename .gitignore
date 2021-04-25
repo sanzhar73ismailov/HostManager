@@ -1,2 +1,12 @@
 build
 dist
+/netbeans/lab/.idea/
+/netbeans/lab/nbproject/
+/netbeans/CommPort/.idea/
+/netbeans/CommPort/nbproject/
+/netbeans/CommPort/out/
+/netbeans/CommPort/*.iml
+/netbeans/lab/src/*.iml
+/mavenproject/lishostmanager/target/
+/mavenproject/lishostmanager/*.iml
+/mavenproject/lishostmanager/.idea/
