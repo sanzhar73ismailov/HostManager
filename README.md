@@ -15,8 +15,9 @@
 `idx` - порядковый номер ревизии в текущем дне, начиная с 1
 
 ##Содержимое
-   netbeans/lab/ - Главный проект - веб приложение для администрирования
-   netbeans/CommPort/ - модуль для обмена данными с приборами
+   netbeans/lab/ - Главный проект - веб приложение для администрирования (Устаревший вариант, теперь используется mavenproject/lishostmanager)
+   netbeans/CommPort/ - модуль для обмена данными с приборами (Устаревший вариант, теперь используется mavenproject/lishostmanager)
+   mavenproject/lishostmanager - java web приложение для обмена данными с приборами
    DB - скрипты DDL,DML
    DOC - документация
 
@@ -37,8 +38,5 @@ v. 16.06.05.1
    ~ в проект CommPort - в классе instrument.DriverAdvia2120 в методе getResultsFromMessage добавил строки по нарщиванию версии результата
                 int lastVersion = model.getVersionOfLastResultByInstrumentAndSid(instrument.getName(), message.getSid(), testCode);
                 resEntity.setVersion(lastVersion + 1);
-
-
-
 
 

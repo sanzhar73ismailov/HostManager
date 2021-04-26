@@ -67,7 +67,7 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <archive>
+<!--                    <archive>-->
 <!--                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>-->
 <!--                        <manifestFile></manifestFile>-->
 <!--                        <manifest>-->
@@ -80,7 +80,7 @@
 <!--                            <My-Application-Version>${project.version}</My-Application-Version>-->
 
 <!--                        </manifestEntries>-->
-                    </archive>
+<!--                    </archive>-->
 
                 </configuration>
             </plugin>
