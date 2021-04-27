@@ -5,7 +5,7 @@
 
     <groupId>kz.biostat</groupId>
     <artifactId>lishostmanager</artifactId>
-    <version>20210427.2</version>
+    <version>20210427.3</version>
     <packaging>war</packaging>
 
     <name>lishostmanager</name>

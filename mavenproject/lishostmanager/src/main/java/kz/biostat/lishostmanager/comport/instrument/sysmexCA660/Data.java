@@ -6,6 +6,7 @@ public class Data {
 
         Time, ActiviyPercentConcentration, Ratio, INR, dFbg
     }
+
     private String testCode;
     private String testCodeForResult;
     private unitsEnum units;
@@ -27,13 +28,17 @@ public class Data {
                 case Time:
                 case ActiviyPercentConcentration:
                 case dFbg:
-                    result = Double.parseDouble(data) / 10 + "";
+                    if (testCodeForResult.equals("612"))
+                        result = Double.parseDouble(data) / 100 + "";
+                    else
+                        result = Double.parseDouble(data) / 10 + "";
                     break;
                 case Ratio:
                 case INR:
                     result = Double.parseDouble(data) / 100 + "";
                     break;
             }
+
         } catch (Exception ex) {
             System.out.println("ex = " + ex.getMessage());
         }
@@ -87,11 +92,11 @@ public class Data {
     public String getValue() {
         return value;
     }
-    
+
 
     @Override
     public String toString() {
-        return "<br><b>Data</b>{" + "testCode=" + testCode + ", testCodeForResult=" + testCodeForResult + 
+        return "<br><b>Data</b>{" + "testCode=" + testCode + ", testCodeForResult=" + testCodeForResult +
                 ", units=" + units + ", value=" + value + ", flag=" + flag + '}';
     }
 
