@@ -1,4 +1,4 @@
-<%@page import="modelHost.ModelImpl"%>
+<%@page import="kz.biostat.lishostmanager.comport.modelHost.ModelImpl"%>
 <!-- Center start -->
 <h1>List of logs <span style="color:red;">${autoRefreshMessage}</span></h1>
 <h1>Instrument ${instrument.name} (Id: ${param.instrument})</h1> 

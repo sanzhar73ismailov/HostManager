@@ -91,6 +91,8 @@ public class InstrumentIndicator {
                     driver = new DriverSysmexCa1500(instrObj, model);
                 } else if (instrObj.getModel().getName().equals(Configurator.MINDRAY_BC_3000)) {
                     driver = new DriverMindrayBC3000(instrObj, model);
+                } else if (instrObj.getModel().getName().equals(Configurator.SYSMEX_XS_500_i)) {
+                    driver = new DriverSysmexXS500i(instrObj, model);
                 } else {
                     throw new UnsupportedOperationException("Unknown model of driver: instrObj.getModel().getName()");
                 }
@@ -118,7 +120,7 @@ public class InstrumentIndicator {
     public static InstrumentIndicator getInstance() {
         if (instanse == null) {
             instanse = new InstrumentIndicator();
-        }
+    }
         return instanse;
     }
 

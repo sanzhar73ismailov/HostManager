@@ -4,8 +4,8 @@
     Author     : sanzhar.ismailov
 --%>
 
-<%@page import="modelHost.SqlResult"%>
-<%@page import="modelHost.SqlNative"%>
+<%@page import="kz.biostat.lishostmanager.comport.modelHost.SqlResult"%>
+<%@page import="kz.biostat.lishostmanager.comport.modelHost.SqlNative"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

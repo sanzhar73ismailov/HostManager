@@ -4,6 +4,7 @@ import kz.biostat.lishostmanager.comport.entity.Instrument;
 import kz.biostat.lishostmanager.comport.entity.Result;
 import kz.biostat.lishostmanager.comport.entity.Test;
 import kz.biostat.lishostmanager.comport.entity.WorkOrder;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,6 @@ import static kz.biostat.lishostmanager.comport.instrument.ASCII.*;
 import static kz.biostat.lishostmanager.comport.instrument.ASCII.getASCIICodeAsString;
 
 /**
- *
  * @author sanzh
  */
 public class DriverSysmexXS500i extends DriverInstrument {
@@ -30,7 +30,7 @@ public class DriverSysmexXS500i extends DriverInstrument {
         super(instrument, model);
     }
 
-    
+
     @Override
     public void driverRun() throws InstrumentException, IOException {
         counter++;
@@ -40,7 +40,7 @@ public class DriverSysmexXS500i extends DriverInstrument {
         try {
             threadSleep(5000);
             if (inputStream.available() == 0) {
-                //через каждые 30 мин
+                //через каждые 150 times = 12 мин
                 if ((counter == 1) || (counter % 150 == 0)) {
                     sendTestASTMEnq();
                 }
@@ -53,7 +53,7 @@ public class DriverSysmexXS500i extends DriverInstrument {
                 if (inputValueMainRun == STX) {
                     MessageSysmexXS500i message = getMessage();
                     TypeMessage type = message.getTypeMessage();
-                    if(type == TypeMessage.RESULT_FROM_INSTRUMENT) {
+                    if (type == TypeMessage.RESULT_FROM_INSTRUMENT) {
                         //logTemInfo("typeMessage: RESULT_FROM_INSTRUMENT");
                         saveResults(message);
                     }
@@ -167,20 +167,33 @@ public class DriverSysmexXS500i extends DriverInstrument {
     }
 
     /**
-     *
      * Отправка тестового ENQ для ASTM протоколов - (Посылаем ENQ, получаем ACK,
      * посылаем EOT)
      */
     protected void sendTestASTMEnq() throws IOException, BreakException {
         outputStream.write(ENQ);
-        threadSleep(5000);
-        if (inputStream.available() == 0) {
-            logTemp("info", "no answer after ENQ sending", true);
-            return;
-        }
-        byte inputValueMainRun = (byte) inputStream.read();
-        if (inputValueMainRun == ACK) {
-            logTemp("info", "ENQ-ACK is OK", true);
+        int counter = 0;
+        while (true) {
+            counter++;
+            threadSleep(6000);
+            if (inputStream.available() > 0) {
+                byte inputValueMainRun = (byte) inputStream.read();
+                if (inputValueMainRun == ACK) {
+                    logTemp("info", "ENQ-ACK is OK", true);
+                } else {
+                    logTemp("info", "ENQ-ACK is not OK: received " + ASCII.getASCIICodeAsString(inputValueMainRun), true);
+                }
+                break;
+            } else {
+                if (counter == 1) {
+                    logTemp("info", "no answer after ENQ sending", true);
+                }
+                //20 times = 2 min
+                if (counter % 20 == 0) {
+                    logTemp("info", "no answer after ENQ sending after "+ counter + " times", true);
+                    break;
+                }
+            }
         }
     }
 

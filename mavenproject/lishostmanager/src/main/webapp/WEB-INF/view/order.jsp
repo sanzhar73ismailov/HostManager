@@ -2,7 +2,7 @@
                     <!-- Center start -->
                     <h1>Add/Edit Order Page</h1>
                     ${requestScope.message}
-                    <jsp:useBean id="order" class="entity.WorkOrder" scope="request"/>
+                    <jsp:useBean id="order" class="kz.biostat.lishostmanager.comport.entity.WorkOrder" scope="request"/>
                     <h1> Instrument: ${requestScope.instrument.name}</h1>
                     <form action="save" method="post">
                         <input type="hidden" name="id" value="${order.id}"/>

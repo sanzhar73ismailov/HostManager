@@ -30,7 +30,7 @@ public class ResultQuery extends Query<Result> {
             obj.setStatus(rs.getString("status"));
             obj.setRawText(rs.getString("raw_text"));
             obj.setAddParams(rs.getString("add_params"));
-            obj.setInstrument(rs.getString("kz/biostat/lishostmanager/comport/instrument"));
+            obj.setInstrument(rs.getString("instrument"));
             obj.setSid(rs.getString("sid"));
             obj.setVersion(rs.getInt("version"));
             obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));

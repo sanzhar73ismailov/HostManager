@@ -5,7 +5,7 @@
 
     <groupId>kz.biostat</groupId>
     <artifactId>lishostmanager</artifactId>
-    <version>20210425.1.0-SNAPSHOT</version>
+    <version>20210427.2</version>
     <packaging>war</packaging>
 
     <name>lishostmanager</name>
@@ -67,20 +67,23 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-<!--                    <archive>-->
-<!--                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>-->
-<!--                        <manifestFile></manifestFile>-->
-<!--                        <manifest>-->
-<!--                            <addClasspath>true</addClasspath>-->
-<!--                            <mainClass>com.mkyong.core.App</mainClass>-->
-<!--                            <classpathPrefix>dependency-jars/</classpathPrefix>-->
-<!--                        </manifest>-->
+<!--                 чтобы создавался lab.war. Решил вручную задавать при диплое в Glassfish-->
+<!--                 <warName>lab</warName> -->
 
-<!--                        <manifestEntries>-->
-<!--                            <My-Application-Version>${project.version}</My-Application-Version>-->
+                    <!--                    <archive>-->
+                    <!--                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>-->
+                    <!--                        <manifestFile></manifestFile>-->
+                    <!--                        <manifest>-->
+                    <!--                            <addClasspath>true</addClasspath>-->
+                    <!--                            <mainClass>com.mkyong.core.App</mainClass>-->
+                    <!--                            <classpathPrefix>dependency-jars/</classpathPrefix>-->
+                    <!--                        </manifest>-->
 
-<!--                        </manifestEntries>-->
-<!--                    </archive>-->
+                    <!--                        <manifestEntries>-->
+                    <!--                            <My-Application-Version>${project.version}</My-Application-Version>-->
+
+                    <!--                        </manifestEntries>-->
+                    <!--                    </archive>-->
 
                 </configuration>
             </plugin>

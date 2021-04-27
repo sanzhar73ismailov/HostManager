@@ -5,24 +5,24 @@
   <tlib-version>1.0</tlib-version>
   <short-name>newtag_library</short-name>
   <uri>/WEB-INF/tlds/newtag_library</uri>
-  <function>
-      <name>f123</name>
-      <function-class>lab.servlet.Test</function-class>
-      <function-signature>java.lang.String hello(java.lang.String)</function-signature>
-  </function>
+<!--  <function>-->
+<!--      <name>f123</name>-->
+<!--      <function-class>kz.biostat.lishostmanager.web.lab.servlet.Test</function-class>-->
+<!--      <function-signature>java.lang.String hello(java.lang.String)</function-signature>-->
+<!--  </function>-->
   <function>
       <name>getWorkOrderProperty</name>
-      <function-class>lab.servlet.FLFunctions</function-class>
-      <function-signature>java.lang.String getWorkOrderProperty(entity.WorkOrder,java.lang.String)</function-signature>
+      <function-class>kz.biostat.lishostmanager.web.lab.servlet.FLFunctions</function-class>
+      <function-signature>java.lang.String getWorkOrderProperty(kz.biostat.lishostmanager.comport.entity.WorkOrder,java.lang.String)</function-signature>
   </function>
   <function>
       <name>getSelected</name>
-      <function-class>lab.servlet.FLFunctions</function-class>
+      <function-class>kz.biostat.lishostmanager.web.lab.servlet.FLFunctions</function-class>
       <function-signature>java.lang.String getSelected(java.lang.String,java.lang.String)</function-signature>
   </function>
   <function>
       <name>getValueFromDic</name>
-      <function-class>lab.servlet.FLFunctions</function-class>
+      <function-class>kz.biostat.lishostmanager.web.lab.servlet.FLFunctions</function-class>
       <function-signature>java.lang.String getValueFromDic(java.util.List, java.lang.String)</function-signature>
   </function>
   <!-- A validator verifies that the tags are used correctly at JSP

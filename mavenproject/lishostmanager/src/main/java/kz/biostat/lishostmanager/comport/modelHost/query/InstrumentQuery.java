@@ -66,7 +66,7 @@ public class InstrumentQuery extends Query<Instrument> {
     @Override
     public String getInsertQuery() {
         String query = "INSERT INTO "
-                + "kz/biostat/lishostmanager/comport/instrument"
+                + "instrument"
                 + "("
                 + "  name,"
                 + "  model_id,"
@@ -109,7 +109,7 @@ public class InstrumentQuery extends Query<Instrument> {
     @Override
     public String getUpdateQuery() {
         String query = "UPDATE "
-                + "kz/biostat/lishostmanager/comport/instrument  "
+                + "instrument  "
                 + "SET "
                 + "  name = ?,"
                 + "  model_id = ?,"

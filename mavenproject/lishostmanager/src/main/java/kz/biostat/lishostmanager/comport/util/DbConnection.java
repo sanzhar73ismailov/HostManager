@@ -16,8 +16,8 @@ public class DbConnection {
     public final static String PASSWORD = "1qaz_2wsx";
 
     /* for local working */
-    //    public final static String USER = "root";
-    //    public final static String PASSWORD = "";
+//        public final static String USER = "root";
+//        public final static String PASSWORD = "";
 
     public final static String DB_NAME = "lis";
 

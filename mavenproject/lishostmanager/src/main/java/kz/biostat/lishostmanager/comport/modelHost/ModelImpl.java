@@ -586,7 +586,7 @@ public class ModelImpl implements Model {
         try {
             // int versionLast = dao.getMaxResultVersion(instrument, sid);
             Properties prop = new Properties();
-            prop.setProperty("kz/biostat/lishostmanager/comport/instrument", "='" + instrument + "'");
+            prop.setProperty("instrument", "='" + instrument + "'");
             prop.setProperty("sid", "='" + sid + "'");
             //  prop.setProperty("version", "='" + versionLast + "'");
             List<Result> list = dao.getObjects(prop, new Result(), "order by id desc");
@@ -600,7 +600,7 @@ public class ModelImpl implements Model {
         try {
             // int versionLast = dao.getMaxResultVersion(instrument, sid);
             Properties prop = new Properties();
-            prop.setProperty("kz/biostat/lishostmanager/comport/instrument", "='" + instrument + "'");
+            prop.setProperty("instrument", "='" + instrument + "'");
             //prop.setProperty("sid", "='" + sid + "'");
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String dateParam = sdf.format(date);

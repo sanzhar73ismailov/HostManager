@@ -4,7 +4,7 @@
 <!-- Center start -->
 <h1>Add/Edit Instrument Page</h1>
 ${requestScope.message}
-<jsp:useBean id="bean" class="entity.Instrument" scope="request"/>
+<jsp:useBean id="bean" class="kz.biostat.lishostmanager.comport.entity.Instrument" scope="request"/>
 <form action="save" method="post">
     <input type="hidden" name="id" value="${bean.id}"/>
     <input type="hidden" name="entity" value="instrument"/>

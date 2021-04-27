@@ -176,7 +176,8 @@ public abstract class DriverInstrument {
             direction = direction.substring(0, 20);
         }
 
-        System.out.println("log: " + direction + " " + message);
+//        System.out.println("log: " + direction + " " + message);
+        Logger.getLogger(DriverInstrument.class.getName()).log(Level.INFO, "log: " + direction + " " + message);
 
         //чтобы в базу поместилось, ставим ограничение до SIZE_MESSAGE символов
         if (message != null && message.length() > SIZE_MESSAGE) {

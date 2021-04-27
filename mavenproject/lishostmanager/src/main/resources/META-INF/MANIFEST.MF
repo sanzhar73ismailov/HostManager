@@ -1,2 +1,1 @@
-Manifest-Version: 21.04.10.1
-GGG: 123
+Manifest-Version: 20210427.2.0
