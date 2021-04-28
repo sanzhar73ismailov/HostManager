@@ -5,6 +5,7 @@ import kz.biostat.lishostmanager.comport.entity.Sender;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import kz.biostat.lishostmanager.comport.modelHost.DaoException;
 
@@ -34,7 +35,7 @@ public class MessageQuery extends Query<Message> {
             obj.setSender(sender);
             obj.setIncomeNumber(rs.getString("income_number"));
             obj.setClose(rs.getBoolean("close"));
-            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));
+            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime", Calendar.getInstance()).getTime()));
             return obj;
         } catch (SQLException ex) {
             throw new DaoException(ex);

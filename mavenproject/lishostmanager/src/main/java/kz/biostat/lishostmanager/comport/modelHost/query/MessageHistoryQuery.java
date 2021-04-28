@@ -5,6 +5,7 @@ import kz.biostat.lishostmanager.comport.entity.MessageHistory;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import kz.biostat.lishostmanager.comport.modelHost.DaoException;
 
@@ -23,7 +24,7 @@ public class MessageHistoryQuery extends Query <MessageHistory>{
             message.setId(rs.getInt("message_id"));
             obj.setMessage(message);
             obj.setText(rs.getString("text"));
-            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));
+            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime", Calendar.getInstance()).getTime()));
             return obj;
         } catch (SQLException ex) {
             throw new DaoException(ex);

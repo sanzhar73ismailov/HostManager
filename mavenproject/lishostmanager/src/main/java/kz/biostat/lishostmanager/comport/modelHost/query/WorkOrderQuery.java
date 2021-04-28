@@ -5,6 +5,7 @@ import kz.biostat.lishostmanager.comport.entity.WorkOrder;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import kz.biostat.lishostmanager.comport.modelHost.DaoException;
 import kz.biostat.lishostmanager.comport.util.Util;
@@ -36,7 +37,7 @@ public class WorkOrderQuery extends Query<WorkOrder> {
             obj.setStatus(rs.getInt("status"));
             obj.setTests(rs.getString("tests"));
             obj.setAddParamsFromString(rs.getString("add_params"));
-            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));
+            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime", Calendar.getInstance()).getTime()));
             return obj;
         } catch (SQLException ex) {
             throw new DaoException(ex);

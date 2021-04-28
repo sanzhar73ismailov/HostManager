@@ -5,6 +5,7 @@ import kz.biostat.lishostmanager.comport.entity.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import kz.biostat.lishostmanager.comport.modelHost.DaoException;
 
 public class ResultQuery extends Query<Result> {
@@ -33,7 +34,7 @@ public class ResultQuery extends Query<Result> {
             obj.setInstrument(rs.getString("instrument"));
             obj.setSid(rs.getString("sid"));
             obj.setVersion(rs.getInt("version"));
-            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));
+            obj.setInsertDatetime(new java.util.Date(rs.getTimestamp("insert_datetime", Calendar.getInstance()).getTime()));
             obj.setSidVersion(obj.getSid() + "^" + obj.getVersion());
             return obj;
         } catch (SQLException ex) {

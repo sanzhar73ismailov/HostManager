@@ -5,6 +5,7 @@ import kz.biostat.lishostmanager.comport.entity.LogInstrument;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 import kz.biostat.lishostmanager.comport.modelHost.DaoException;
 
@@ -23,7 +24,7 @@ public class LogInstrumentQuery extends Query<LogInstrument> {
             obj.setDirection(rs.getString("direction"));
             obj.setMessage(rs.getString("message"));
             obj.setTemp(rs.getBoolean("temp"));
-            obj.setInsertDate(new java.util.Date(rs.getTimestamp("insert_datetime").getTime()));
+            obj.setInsertDate(new java.util.Date(rs.getTimestamp("insert_datetime", Calendar.getInstance()).getTime()));
             return obj;
         } catch (SQLException ex) {
             throw new DaoException(ex);
