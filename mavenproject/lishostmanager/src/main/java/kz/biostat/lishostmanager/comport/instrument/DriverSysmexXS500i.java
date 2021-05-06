@@ -38,10 +38,11 @@ public class DriverSysmexXS500i extends DriverInstrument {
             throw new BreakException("mashine " + instrument.getName() + " stopped");
         }
         try {
-            threadSleep(5000);
+            threadSleep(3000);
             if (inputStream.available() == 0) {
                 //через каждые 150 times = 12 мин
-                if ((counter == 1) || (counter % 150 == 0)) {
+                //if ((counter == 1) || (counter % 150 == 0)) {
+                if (counter == 1) {
                     sendTestASTMEnq();
                 }
                 return;
