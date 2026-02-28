@@ -1,0 +1,37 @@
+Supported Products:
+
+CN2600 Series:     CN2610-8, CN2610-16, CN2610-8-2AC, CN2610-16-2AC,
+                   CN2650-8, CN2650-16, CN2650-8-2AC, CN2650-16-2AC
+CN2500 Series:     CN2510-8, CN2510-16, CN2510-8-48V, CN2510-16-48V	
+NPort DE Series:   DE-211, DE-311, DE-301, DE-302, DE-304, DE-334
+NPort 5100 Series: NPort 5110, NPort 5130, NPort 5150, NPort 5110-T
+NPort 5200 Series: NPort 5210, NPort 5230, NPort 5232, NPort 5232I, 
+                   NPort 5210-T, NPort 5230-T, NPort 5232-T, NPort 5232I-T 
+NPort 5400 Series: NPort 5410, NPort 5430, NPort 5430I, NPort 5450, 
+                   NPort 5450I, NPort 5450-T, NPort 5450I-T
+NPort 5600 Desktop Series: NPort 5610-8-DT, NPort 5610-8-DT-J, 
+                   NPort 5650-8-DT, NPort 5650-8-DT-J, NPort 5650I-8-DT
+NPort 5600 Rackmount Series: NPort 5610-8, NPort 5610-8-48V, NPort 5630-8,
+                   NPort 5650-8, NPort 5610-16, NPort 5610-16-48V, 
+                   NPort 5630-16, NPort 5650-16, NPort 5650-8-M-SC,
+                   NPort 5650-16-M-SC, NPort 5650-8-S-SC, NPort 5650-16-S-SC
+NPort Wireless Series: NPort W2150, NPort W2250, NPort W2150 Plus, 
+                   NPort W2250 Plus, NPort W2150 Plus-T, NPort W2250 Plus-T,
+                   NPort W2004
+NPort IA5000 Series: NPort IA5150, NPort IA5150I, NPort IA5150-S-SC, 
+                   NPort IA5150I-S-SC, NPort IA5150-M-SC, NPort IA5150I-M-SC, 
+                   NPort IA5250, NPort IA5150-T, NPort IA5150I-T, 
+                   NPort IA5150-S-SC-T, NPort IA5150I-S-SC-T, 
+                   NPort IA5150-M-SC-T, NPort IA5150I-M-SC-T, NPort IA5250-T
+NPort 6000 Series: NPort 6150, NPort 6250, NPort 6250-M-SC, NPort 6250-S-SC,
+                   NPort 6450, NPort 6610-8, NPort 6610-16, NPort 6610-32,
+                   NPort 6650-8, NPort 6650-16, NPort 6650-32, 
+                   NPort 6610-8-48V, NPort 6610-16-48V, NPort 6610-32-48V,
+                   NPort 6650-8-48V, NPort 6650-16-48V, NPort 6650-32-48V
+NPort S8000 Series: NPort S8455I-MM-SC
+NE-4100 Series:    NE-4100T, NE-4110S, NE-4120S, NE-4110A, NE-4120A
+WE-2100T Series:   WE-2100T
+MiiNePort E1 Series: MiiNePort E1, MiiNePort E1-T
+
+    You may always find and download the latest driver at 
+    http://www.moxa.com

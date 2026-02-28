@@ -1,0 +1,261 @@
+
+Product:	NPort Administration Suite
+Version:	1.15 Build 10112214
+Date:		11/22/2010
+Company:	Moxa Inc.
+
+Support Platform:
+-----------------
+Windows 95
+Windows 98
+Windows ME
+Windows NT
+Windows 2000
+Windows XP (x86/x64)
+Windows Server 2003 (x86/x64)
+Windows Vista (x86/x64)
+Windows Server 2008 (x86/x64)
+Windows Server 2008 R2
+Windows 7 (x86/x64)
+
+
+Supported Product:
+-----------------
+NPort 5110, 5130, 5150
+NPort 5210, 5230, 5232, 5232I
+NPort 5410, 5410 V3, 5430, 5430 V3, 5430I, 5430I V3, 5450, 5450I
+NPort 5610-8, 5610-8-48V, 5610-16, 5610-16-48V, 5630-8, 5630-16
+NPort 5650-8, 5650-16, 5650-8-S-SC, 5650-16-S-SC, 5650-8-M-SC, 5650-16-M-SC
+NPort 5610-8-DT, 5610-8-DT-J, 5650-8-DT, 5650-8-DT-J, 5650I-8-DT 
+NPort IA-5150, IA-5150I, IA-5250, IA-5250I
+NPort IA-5150-S-SC, IA-5150I-S-SC, IA-5150-M-SC, IA-5150I-M-SC
+NPort 5110A, 5130A, 5150A
+NPort 5210A, 5230A, 5250A
+NPort IA5150A, IA5150AI, IA5250A, IA5250AI
+NPort IA5450A, IA5450AI
+
+
+Release Note:
+-----------------
+Ver1.15 Build 10112214
+1. New: Support Multi-connection by IPSerial library.
+2. New: Support windows 7
+3. Bugfix: Reduce handle counts when application call nsio_init() from IPSerial
+   library.
+4. Bugfix: When user close COM port and apply change to other COM number
+   simultaneously, NPort administrator utility will cause hang up. 
+5. Bugfix: If nsio_close is called several times, the call to nsio_open will
+   eventually fail with error.
+
+Ver1.14
+1. New: Support COM Grouping function on Windows NT.
+2. Bugfix: Shorten opening time of COM Grouping.
+3. Bugfix: Shorten setting time of COM Grouping.
+4. Bugfix: Fix write operation stop transmitting problem. 
+5. Bugfix: Fix stop monitor and port monitor after remove target. 
+
+Ver1.13
+1. New: Support NPort 5110A, 5130A, 5150A, IA5450A, IA5450AI, IA5150A,
+        IA5150AI, IA5250A, IA5250AI, 5210A, 5230A, 5250A.
+2. New: Support COM Grouping function (don't support Windows 95/98/ME/NT).
+3. Bugfix: Set ip filter netmask error on Windows x64 platform.
+
+Ver1.12
+1. New: Support NPort IA-5250I.
+2. Bugfix: Fix the "Import COM Mapping" function throwing "invalid pointer 
+           opertion" message issue.
+3. Bugfix: Fix the monitor function cause the memory leak.
+4. Bugfix: Adjust the IRP completion order for multi-processor environment.
+5. Bugfix(Driver): Fixed the buffer protection mechanism while inserting
+                   special characters to serial RX buffer.
+6. Bugfix(Driver): Fix write timeout problem of driver.
+
+Ver1.10.7
+1. Bugfix: Fix the "Import COM Mapping" function throwing "invalid pointer
+           opertion" message issue.
+
+Ver1.10.5
+1. Bugfix: Fix the monitor function cause the memory leak.
+
+Ver1.10.3
+1. Bugfix: Adjust the IRP completion order for mulit-processor environment.
+
+Ver1.10.1
+1. Bugfix(Driver): Fixed the buffer protection mechnism while inserting special
+                   characters to serial RX buffer.
+
+Ver1.10
+1. Bugfix: Fix the application crash problem with IP serial library when 
+           binding more than 8 IPs(alias) of PC.
+2. Bugfix: Loading driver failed in Windows Vista x64.
+
+Ver1.9.1
+1. Upgrade package: IPSerial Library.
+2. Bugfix(IPserial): When PC blind more than 8 IP, the application crashed.
+
+Ver1.9
+1. Offical release.
+2. Bugfix: SERIAL_PURGE_TXABORT didn't reset WriteCharsQueued counter.
+3. Bugfix: SIO outqueue count is inaccurate under classical mode.
+4. Bugfix: The port number is incorrect in "UDP Mode Settings: Destination"
+           list.
+5. Bugfix: The Startup of Monitor and Port Monitor might fail.
+6. Bugfix: The Remove of Monitor and Port Monitor might fail.
+7. Bugfix: The search function is abnormal in a Windows 2003 host with dual
+           LAN cards.
+8. Bugfix: Add COM port failed when "SERIALCOMM" registry key is absent.
+9. Bugfix: The invalid argument to time encode problem.
+10. Bugfix: The access violation problem in "IP Address Report List".
+11. Bugfix: Support 16 IP addresses of local host in search function.
+12. Bugfix: The "Alive" status in Monitor and Port Monitor might incorrect.
+
+Ver1.8.17
+1. Bugfix: Resolve the invalid argument to time encode problem.
+
+Ver1.8.9
+1. Bugfix: Add COM port failed when "SERIALCOMM" registry key is absent.
+
+Ver1.8.7
+1. Bugfix: The search function is abnormal in a Windows 2003 host with dual
+           LAN cards.
+
+Ver1.8.5
+1. Bugfix: The Startup of Monitor and Port Monitor might fail.
+2. Bugfix: The Remove of Monitor and Port Monitor might fail.
+
+Ver1.8.3
+1. Bugfix: The port number is incorrect in "UDP Mode Settings: Destination"
+           list. 
+
+Ver1.8.1
+1. Bugfix: SERIAL_PURGE_TXABORT didn't reset WriteCharsQueued counter.
+2. Bugfix: SIO outqueue count is inaccurate under classical mode.
+
+Ver1.8
+1. Official release.
+2. Support Windows Vista platform.
+3. Support 5610-8-DT, 5610-8-DT-J, 5650-8-DT, 5650-8-DT-J and 5650I-8-DT
+           product.
+
+Ver1.7
+1. Official release.
+2. Add new function "Network Timeout" in COM setting. 
+3. Add auto message log function. 
+
+Ver1.6.31
+1. bugfix: Modem dial out caused system halted on multi-processor platforms.
+
+Ver1.6.29
+1. bugfix: Driver read operation caused double completion (BSOD) on
+           multi-processor platforms.
+
+Ver1.6.27 
+1. bugfix: GetCommStatus caused BSOD on multi-processor platforms.
+
+ver1.6.25
+1. Fixed the bug that ioctl of setting Xon/Xoff character failed.
+
+ver1.6.23
+1. Fixed bugs that is detected by Static Driver Verifier, which includes a
+   double completion
+   problem, Complete IRP without releasing cancel spinlock.
+2. A wrong driver was included in verion 1.6.21, this version fixed this
+   problem.
+
+ver1.6.15
+1. Improve IoctlGetCommstatus() to report live out queue count.
+
+ver1.6.5
+1. Improve utility user interface.
+
+ver1.6.3
+1. Improve COM setting functions. If the selected ports are in used, no
+   change can be made on them.
+   These setting include, COM number, Tx mode, FIFO and Fast Flush.
+2. Improve COM setting functions. If the users do not have administrative
+   privilege, they cannot add and delete the COM ports. However, they can
+   still view the COM settings, and open the COM ports.
+
+ver1.6.1
+1. Fixed FastFlush setting error when COM port number exceeds 127.
+2. Improve utility user interface.
+3. Fixed Com Mapping problem when disable port is opened.
+
+ver1.6
+1. Official release.
+2. Support PPP Mode and Real Com Mode(RFC2217) operating mode for NPort 56xx.
+3. Support Windows x64 Edition.
+4. Move nprcmisic.dll to nport.dll to cover all Moxa NPort product.
+5. Support new NPort 5130, 5150, 5650, 5650-S-SC, 5650-M-SC model.
+6. Fixed IOCTL_SERIAL_IMMEDIATE_CHAR bug to prevent from BSOD.
+7. Fixed IOCTL_SERIAL_XOFF_COUNTER bug to prevent from system halt.
+8. Fixed Accessible IPs export and import configuration did not match.
+
+ver1.5.13
+1. Fixed IOCTL_SERIAL_IMMEDIATE_CHAR bug to prevent from BSOD.
+
+ver1.5.11
+1. Fix IPSerial nsio_write and mutli-port connection problems.
+
+ver1.5.9
+1. Fix can not remove serial port settings by Administrator when uninstall
+   NPort Administration Suite.
+
+ver1.5.5
+1. Supports SERIAL_LSRMST_ESCAPE and SERIAL_LSRMST_MST event types of
+   IOCTL_SERIAL_LSRMST_INSERT request.
+   SERIAL_LSRMST_LSR_NODATA and SERIAL_LSRMST_LSR_DATA event types are not
+   supported due to driver's limitation.
+
+ver1.5.3
+1. Fixed COM Mapping could not import file which is exported by Administrator
+   ver1.2.
+
+ver1.5.1
+1. Disconnecting NPort will crash the application while calling nsio_close.
+
+ver1.5
+1. Official release.
+2. Support new funtion of firmware 2.0.
+3. Add new NPort IA model.
+4. Add Web console toolbar.
+5. Fix high CPU loading with Hyper Threading system. 
+6. Fix COM Mapping rescan makes models could not configure in Configuration.
+
+Ver1.4.23: 8/10/05
+1. Fix Port Monitor: When NPort is reconnection, Administrator makes CPU
+   loading up to 100%.
+
+Ver1.4.21: 7/4/05
+1. Support IOCTL_SERIAL_XOFF_COUNTER command(Win2k/XP/2003). Some 16bits
+   program uses this command.
+2. Register COM number usage on system (Win2k/XP/2003). This will avoid
+   other COM device to use ths same COM number occupied by this driver.
+
+Ver1.4.19: 6/6/05
+1. Fix event log lost problem.
+
+Ver1.4.17: 5/31/05
+1. Fix IOCTL_SERIAL_SET_WAIT_MASK (npser+114c) BSOD IRQL_NOT_LESS_OR_EQUAL
+   problem.
+2. Fix (npser+5c13) BSOD KERNEL_MODE_EXCEPTION_NOT_HANDLED problem.
+3. Fix Verifier testing problem.
+
+ver1.4.15: 5/31/05
+1. Improve Windows 2000/XP/2003 driver "Fast Flush" performance.
+2. Ver1.4.13 "Fast Flush" function doesn't work properly problem fixed.
+
+ver1.4.13: 4/27/05
+1. Classical mode oqueue length is not correct. Fixed.
+2. Tx doesn't stop on network disconnection. Fixed.
+
+ver1.4.11, 4/15/05
+1. Improve disconnection process to prevent application blocking.
+2. Write blocked after reconnection problem fixed.
+3. Improve NT/2K/XP/2003 driver Ioctl performance (parity, baud, modem...).
+
+ver1.4
+1. Official release.
+2. Support NPort 5610 v2(up to 921.6K)
+
+-End-
